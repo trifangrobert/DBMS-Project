@@ -27,6 +27,8 @@ END;
 /
 
 BEGIN
+    print_students_of_dept(152);
+    print_students_of_dept(252);
     print_students_of_dept(251);
 END;
 /
@@ -74,7 +76,10 @@ END;
 /
     
 BEGIN 
-    ex7('Bucuresti', 2);
+     ex7('Bucuresti', 2);
+     ex7('Oxford', 1);
+     ex7('Paris', 2);
+    ex7('Boston', 1);
 END;
 /
 
@@ -138,9 +143,9 @@ END;
 /
     
 BEGIN
---     DBMS_OUTPUT.PUT_LINE(ex8(NULL));
---     DBMS_OUTPUT.PUT_LINE(ex8('TW'));
---     DBMS_OUTPUT.PUT_LINE(ex8('GAL'));
+    DBMS_OUTPUT.PUT_LINE(ex8(NULL));
+    DBMS_OUTPUT.PUT_LINE(ex8('TW'));
+    DBMS_OUTPUT.PUT_LINE(ex8('GAL'));
     DBMS_OUTPUT.PUT_LINE(ex8('PF'));
 END;
 /
@@ -243,8 +248,9 @@ BEGIN
         WHEN NO_DATA_PROFESSORS THEN
             DBMS_OUTPUT.PUT_LINE('No professors for student with id ' || student_id_val);
         WHEN OTHERS THEN
-            DBMS_OUTPUT.PUT_LINE('code error ' || SQLCODE);
-            DBMS_OUTPUT.PUT_LINE('message error ' || SQLERRM);
+            NULL;
+--            DBMS_OUTPUT.PUT_LINE('code error ' || SQLCODE);
+--            DBMS_OUTPUT.PUT_LINE('message error ' || SQLERRM);
         
 END;
 /
@@ -704,9 +710,9 @@ END ex14;
 /
 
 BEGIN
-    -- ex14.print_student_clubs(ex14.get_student_clubs(2));
-    -- ex14.print_final_projects(ex14.get_final_projects(2018)); 
-    -- ex14.update_student_new_year(10);
-    -- ex14.print_graduated_students();
+     ex14.print_student_clubs(ex14.get_student_clubs(2));
+     ex14.print_final_projects(ex14.get_final_projects(2018)); 
+     -- ex14.update_student_new_year(10); --disable trigger to run this command
+     ex14.print_graduated_students();
 END;
 /
